@@ -9,6 +9,10 @@ import java.io.PrintWriter;
 @WebServlet(name="ConverterServlet", urlPatterns = "/convert")
 public class CurrencyConverterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         float rate = Float.parseFloat(request.getParameter("rate"));
         float usd = Float.parseFloat(request.getParameter("usd"));
 
@@ -20,9 +24,5 @@ public class CurrencyConverterServlet extends HttpServlet {
         writer.println("<h1>USD: " + usd+ "</h1>");
         writer.println("<h1>VND: " + vnd+ "</h1>");
         writer.println("</html>");
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }
